@@ -3273,8 +3273,8 @@
 
                     var splineStep = that.textHeight / 20;
                     var segment = {
-                      p0: that.getEquidistantPointOnPath(offset, splineStep, 0.005),
-                      p1: that.getEquidistantPointOnPath(offset + glyphWidth + kern, splineStep, 0.005)
+                      p0: that.getEquidistantPointOnPath(offset, splineStep, 0.00005),
+                      p1: that.getEquidistantPointOnPath(offset + glyphWidth + kern, splineStep, 0.00005)
                     };
 
                     offset += glyphWidth + kern;
@@ -3290,9 +3290,9 @@
                 });
 
                 var kerning = function (char, char2) {
-                  if (char && char2 && kerningTable[char] && kerningTable[char][char2]) {
-                    return kerningTable[char][char2] / +310;
-                  }
+                  // if (char && char2 && kerningTable[char] && kerningTable[char][char2]) {
+                  //   return kerningTable[char][char2] / +350;
+                  // }
                   return 0;
                 }
 
