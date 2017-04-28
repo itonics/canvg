@@ -4394,6 +4394,15 @@
         if (svg.opts['ignoreClear'] != true) {
           ctx.clearRect(0, 0, cWidth, cHeight);
         }
+
+        // fill if background
+        if (svg.opts['background']) {
+          var def = ctx.fillStyle;
+          ctx.fillStyle = svg.opts['background'];
+          ctx.fillRect(0, 0, cWidth, cHeight);
+          ctx.fillStyle = def;
+        }
+
         e.render(ctx);
         if (isFirstRender) {
           isFirstRender = false;
